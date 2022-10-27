@@ -259,7 +259,9 @@ img {
 }
 
 .hero-button:hover,
-.hero-button:focus {
+.hero-button:focus,
+.subscribe-button:hover,
+.subscribe-button:focus {
   background-color: #188ce8;
   cursor: pointer;
 }
@@ -714,7 +716,6 @@ div.team-member-description {
 }
 
 .subscribe-input::placeholder {
-  /* content: "e-mail"; */
   font-size: 16px;
   line-height: 1.25;
   display: flex;
@@ -723,6 +724,12 @@ div.team-member-description {
   color: rgba(255, 255, 255, 0.6);
 }
 
+.subscribe-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
 /* -----------------buttons-------------------------- */
 .button {
   color: var(--dark-text-color);
