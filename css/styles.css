@@ -836,6 +836,14 @@ div.team-member-description {
   color: var(--medium-text-color);
 }
 
+.modal-input::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
+}
+
 .user-comment {
   padding: 12px 16px;
   width: 100%;
@@ -852,14 +860,6 @@ div.team-member-description {
 .user-comment:focus,
 .user-comment:hover {
   border: 1px solid var(--accent-color);
-}
-
-.modal-input::placeholder {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
-
-  color: rgba(117, 117, 117, 0.5);
 }
 
 .button-submit {
@@ -884,7 +884,14 @@ div.team-member-description {
 
 /* -------------self after vidio--------- */
 
-.checkbox {
+.checkbox-field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.checkbox-input {
   /* -webkit-appearance: value;
   -moz-appearance: value;
   appearance: value;
@@ -901,25 +908,20 @@ div.team-member-description {
   margin: -1px;
 }
 
-.icon-checkbox {
+.checkbox-icon {
   display: inline-block;
   width: 16px;
   height: 15px;
 
   border: 2px solid var(--dark-text-color);
-  border-radius: 4px;
+  border-radius: 2px;
+  margin-right: 8px;
 }
 
-.checkbox-field {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.checkbox:checked + .checkbox-icon {
+.checkbox-input:checked + .checkbox-icon {
   border-color: var(--accent-color);
   background-color: var(--accent-color);
-  background-image: url("../images/icon-checkbox-full.svg");
+  background-image: url("../images/icon-check.svg");
   background-size: contain;
   background-origin: border-box;
 }
@@ -936,10 +938,3 @@ div.team-member-description {
   color: var(--accent-color);
   border-bottom: 1px solid var(--accent-color);
 }
-/* 
-.checkbox-label {
-  transition: background-color 250ms var(--transition-timing-function);
-}
-
-.checkbox:checked ~ .checkbox-label {
-} */
