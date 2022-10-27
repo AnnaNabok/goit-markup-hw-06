@@ -768,10 +768,10 @@ div.team-member-description {
   visibility: hidden;
   pointer-events: none;
 }
-
-.form-title {
+/* -------------------form----------- */
+.modal-title {
   display: inline-block;
-  padding-bottom: 12px;
+  margin-bottom: 12px;
   font-weight: 700;
   font-size: 20px;
   line-height: 1.15;
@@ -781,27 +781,59 @@ div.team-member-description {
   color: var(--dark-text-color);
 }
 
-.form-input {
-  border: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
+.modal-field {
   margin-bottom: 28px;
-  width: 100%;
-  height: 40px;
-  padding: 12px 42px;
+}
+.input-wrap {
+  position: relative;
 }
 
-label {
+.modal-input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  font-size: 16px;
+  color: #000000;
+  padding-left: 42px;
+
+  outline: transparent;
+  transition: border 250ms var(--transition-timing-function);
+}
+
+.modal-input:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.modal-input-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  fill: var(--dark-text-color);
+  transition: fill 250ms var(--transition-timing-function);
+}
+
+.modal-input:focus + .modal-input-icon {
+  fill: var(--accent-color);
+}
+
+.input-wrap:hover .modal-input-icon {
+  fill: var(--accent-color);
+}
+
+.input-wrap:hover .modal-input {
+  border: 1px solid var(--accent-color);
+}
+
+.modal-label {
   display: flex;
   flex-direction: column;
   margin-bottom: 4px;
-}
-
-.form-input::placeholder {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-
-  color: rgba(117, 117, 117, 0.5);
+  color: var(--medium-text-color);
 }
 
 .user-comment {
@@ -812,6 +844,22 @@ label {
   border-radius: 4px;
   resize: none;
   margin-bottom: 20px;
+
+  outline: transparent;
+  transition: border 250ms var(--transition-timing-function);
+}
+
+.user-comment:focus,
+.user-comment:hover {
+  border: 1px solid var(--accent-color);
+}
+
+.modal-input::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+
+  color: rgba(117, 117, 117, 0.5);
 }
 
 .button-submit {
@@ -835,22 +883,6 @@ label {
 }
 
 /* -------------self after vidio--------- */
-.form-field {
-  position: relative;
-}
-
-.modal-form-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  fill: var(--dark-text-color);
-  transition: fill 250ms var(--transition-timing-function);
-}
-
-.form-input:focus ~ .modal-form-icon {
-  fill: var(--accent-color);
-}
 
 .checkbox {
   /* -webkit-appearance: value;
