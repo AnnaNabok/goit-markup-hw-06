@@ -702,6 +702,10 @@ div.team-member-description {
   display: flex;
 }
 
+.subscribe-label {
+  margin-right: 12px;
+}
+
 .subscribe-input {
   width: 358px;
   height: 50px;
@@ -710,7 +714,6 @@ div.team-member-description {
   padding: 15px 16px;
   color: var(--light-text-color);
   background-color: inherit;
-  margin-right: 12px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   outline: transparent;
 }
@@ -850,7 +853,7 @@ div.team-member-description {
 }
 
 .modal-field {
-  margin-bottom: 28px;
+  margin-bottom: 10px;
 }
 
 .modal-field:last-child {
@@ -924,8 +927,6 @@ div.team-member-description {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   resize: none;
-  margin-bottom: 20px;
-
   outline: transparent;
   transition: border 250ms var(--transition-timing-function);
 }
