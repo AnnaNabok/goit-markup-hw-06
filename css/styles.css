@@ -649,6 +649,10 @@ div.team-member-description {
   margin-right: 70px;
 }
 
+.footer-section:nth-child(2) {
+  margin-right: 93px;
+}
+
 .invitation {
   font-weight: 700;
   font-size: 14px;
@@ -679,13 +683,6 @@ div.team-member-description {
     fill 250ms var(--transition-timing-function);
 }
 /* -----------------subscribe-footer----------------- */
-.subscribe-section {
-  position: absolute;
-  top: 72px;
-  left: 50%;
-  width: 570px;
-  height: 86px;
-}
 
 .subscribe-text {
   display: block;
