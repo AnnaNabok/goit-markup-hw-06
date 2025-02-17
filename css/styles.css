@@ -572,8 +572,6 @@ border: 1px solid #8e8f99;
 
 .subscribe-input {
   width: 100%;
-  /* min-width: 288px; */
-  /* width: 264px; */
   height: 40px;
   border: 1px solid #ffffff;
   background-color: transparent;
@@ -610,7 +608,7 @@ border: 1px solid #8e8f99;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   gap: 16px;
 }
 
@@ -882,6 +880,48 @@ border: 1px solid #8e8f99;
 
   .team-item-wrapper {
     max-width: 356px;
+  }
+
+  .footer-logo-link {
+    text-align: left;
+  }
+
+  .footer-accent-text {
+    text-align: left;
+    width: 264px;
+  }
+
+  .footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+  }
+
+  .footer-tablet-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: baseline;
+  }
+
+  .footer .social-list {
+    justify-content: flex-start;
+  }
+
+  .subscribe-form {
+    flex-direction: row;
+    gap: 24px;
+    justify-content: flex-start;
+  }
+
+  .subscribe-input {
+    display: inline-block;
+    width: 264px;
+  }
+
+  .subscribe-btn {
+    margin-left: 0;
+    margin-right: auto;
   }
 }
 
