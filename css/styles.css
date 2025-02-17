@@ -836,6 +836,11 @@ border: 1px solid #8e8f99;
     text-align: left;
   }
 
+  .team .container,
+  .footer .container {
+    max-width: 584px;
+  }
+
   .team-list {
     gap: 64px 24px;
   }
@@ -897,6 +902,11 @@ border: 1px solid #8e8f99;
     justify-content: center;
     background-repeat: no-repeat;
     margin-bottom: 8px;
+  }
+
+  .team .container,
+  .footer .container {
+    max-width: 1158px;
   }
 
   .team-list {
