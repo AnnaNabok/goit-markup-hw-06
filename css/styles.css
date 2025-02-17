@@ -592,6 +592,7 @@ border: 1px solid #8e8f99;
   line-height: 2;
   letter-spacing: 0.04em;
   color: #ffffff;
+  opacity: 0.6;
 }
 
 .subscribe-btn {
@@ -610,6 +611,7 @@ border: 1px solid #8e8f99;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  gap: 16px;
 }
 
 .subscribe-btn-icon {
