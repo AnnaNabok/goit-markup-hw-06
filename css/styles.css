@@ -20,6 +20,21 @@ ol {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+  list-style-type: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 body {
@@ -28,7 +43,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  line-height: 24px;
+  line-height: 1.5;
   letter-spacing: 0.02em;
 }
 
@@ -46,6 +61,8 @@ ol {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 input,
@@ -66,15 +83,10 @@ fieldset {
   border: none;
 }
 
-.page-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
 .container {
-  max-width: 1158px;
-  padding: 0 15px;
+  width: 100%;
+  max-width: 320px;
+  padding: 0 16px;
   margin: 0 auto;
 }
 
@@ -86,7 +98,6 @@ main {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.11;
-  letter-spacing: 0.02em;
   text-align: center;
   color: #2e2f42;
   text-transform: capitalize;
@@ -103,7 +114,6 @@ portfolio-item-title {
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  letter-spacing: 0.02em;
   color: #2e2f42;
   text-transform: capitalize;
   margin-bottom: 8px;
@@ -113,10 +123,12 @@ portfolio-item-title {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  letter-spacing: 0.02em;
-  text-align: center;
   color: #434455;
-  text-align: left;
+}
+
+.section {
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 /* #region ======HEADER====== */
 .header {
@@ -292,46 +304,28 @@ portfolio-item-title {
 }
 /* #endregion HERO */
 
-.section {
-  padding: 120px 0;
-}
 /* #region ========FEATURES======== */
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
 
 .features-list {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 72px;
 }
 
 .features-item {
   flex-basis: calc((100% - 72px) / 4);
 }
 
+.features-item-title {
+  text-align: center;
+}
+
 .features-icon-wrap {
-  position: relative;
-  width: 264px;
-  height: 112px;
-  background-color: #f4f4fd;
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-repeat: no-repeat;
-  margin-bottom: 8px;
+  display: none;
+}
+
+.features-text {
+  font-weight: 500;
 }
 
 /* .features-icon {
@@ -375,8 +369,8 @@ border: 1px solid #8e8f99;
 }
 .team-list {
   display: flex;
-  gap: 24px;
-  flex-basis: calc((100% - 72) / 4);
+  flex-wrap: wrap;
+  gap: 72px;
 }
 
 .team-item {
@@ -397,7 +391,8 @@ border: 1px solid #8e8f99;
 }
 
 .team-item-wrapper {
-  padding: 32px 0;
+  padding: 32px 16px;
+  width: 264px;
 }
 
 .social-list {
@@ -819,3 +814,105 @@ border: 1px solid #8e8f99;
 }
 
 /* #endregion MODAL*/
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 766px;
+  }
+
+  .team .container,
+  .footer .container {
+    max-width: 584px;
+  }
+
+  .features-list {
+    gap: 72px 24px;
+  }
+
+  .features-item {
+    flex-basis: calc((100% - 48px) / 2);
+  }
+
+  .features-item-title {
+    text-align: left;
+  }
+
+  .team-list {
+    gap: 64px 24px;
+  }
+
+  .team-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
+  .features-text {
+    font-weight: 400;
+  }
+
+  .portfolio-list {
+    gap: 72px 24px;
+  }
+
+  .portfolio-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+
+  .team-item-wrapper {
+    max-width: 356px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .container {
+    max-width: 1158px;
+    padding: 0 15px;
+  }
+
+  .section {
+    padding: 120px 0;
+  }
+
+  .features-list {
+    gap: 24px;
+  }
+
+  .features-item {
+    flex-basis: calc((100% - 72px) / 4);
+  }
+
+  .features-item-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .features-icon-wrap {
+    position: relative;
+    width: 264px;
+    height: 112px;
+    background-color: #f4f4fd;
+    border: 1px solid #8e8f99;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    margin-bottom: 8px;
+  }
+
+  .team-list {
+    gap: 24px;
+    flex-wrap: nowrap;
+  }
+
+  .team-item {
+    flex-basis: calc((100% - 72px) / 3);
+  }
+
+  .portfolio-list {
+    gap: 24px;
+  }
+
+  .portfolio-item {
+    flex-basis: calc((100% - 48px) / 3);
+  }
+}
