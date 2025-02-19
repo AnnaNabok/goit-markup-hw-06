@@ -132,21 +132,17 @@ portfolio-item-title {
 }
 /* #region ======HEADER====== */
 .header {
-  /* border-bottom: 1px solid #e7e9fc; */
+  border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
-  /* 
-    position: fixed;
-        z-index: 999;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
+
   background-color: #fff;
 }
 
 .header-nav {
   display: flex;
   align-items: center;
+  padding: 0;
 }
 
 .header-flex {
@@ -176,69 +172,12 @@ portfolio-item-title {
   display: none;
 }
 
-.nav-item {
-  position: relative;
-}
-
-.current::after {
-  content: '';
-  background-color: #404bbf;
-  width: 100%;
-  display: block;
-  height: 4px;
-  border-radius: 2px;
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  display: block;
-}
-
-.nav-list-link {
-  position: relative;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-  display: block;
-  padding: 24px 0;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.nav-list-link:hover,
-.nav-list-link:focus {
-  color: #404bbf;
-}
-
-.current {
-  color: #404bbf;
-}
-
 .contacts {
   font-style: normal;
 }
 
 .contacts-list {
   display: none;
-}
-
-.contacts-item {
-  padding: 24px 0;
-  position: relative;
-}
-
-.contacts-link {
-  color: #434455;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.contacts-link:hover,
-.contacts-link:focus {
-  color: #404bbf;
 }
 
 /* #region =======MOB MENU======= */
@@ -254,6 +193,10 @@ portfolio-item-title {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 .mob-close-btn {
   background-color: transparent;
@@ -283,8 +226,7 @@ portfolio-item-title {
   flex-direction: column;
   gap: 40px;
 }
-.mob-nav-item {
-}
+
 .mob-nav-list-link {
   font-weight: 700;
   font-size: 36px;
@@ -301,10 +243,6 @@ portfolio-item-title {
   color: #404bbf;
 }
 
-.mob-nav-item {
-}
-.mob-contacts {
-}
 .mob-contacts-list {
   display: flex;
   flex-direction: column;
@@ -946,20 +884,91 @@ border: 1px solid #8e8f99;
     max-width: 768px;
   }
 
-  /* .nav-list {
-    display: flex;
-    gap: 40px;
-  } */
-
-  /* .contacts-list {
-  display: flex;
-  gap: 40px;
-  justify-content: flex-end;
-  align-items: center;
-} */
-
-  logo {
+  .logo {
     padding: 24px 0;
+    margin-right: 120px;
+    line-height: 1.17;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 24px;
+    line-height: 1.17;
+  }
+
+  .nav-item {
+    position: relative;
+  }
+
+  .current::after {
+    content: '';
+    background-color: #404bbf;
+    width: 100%;
+    display: block;
+    height: 4px;
+    border-radius: 2px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    display: block;
+  }
+
+  .nav-list-link {
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2e2f42;
+    display: block;
+    padding: 24px 0;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .nav-list-link:hover,
+  .nav-list-link:focus {
+    color: #404bbf;
+  }
+
+  .current {
+    color: #404bbf;
+  }
+
+  .contacts-link {
+    color: #434455;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .contacts-link:hover,
+  .contacts-link:focus {
+    color: #404bbf;
+  }
+
+  .mob-menu-open {
+    display: none;
+  }
+
+  .contacts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-content: center;
+    padding: 6px 0;
+  }
+
+  .contacts-link {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #434455;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .hero {
@@ -1106,6 +1115,29 @@ border: 1px solid #8e8f99;
   .container {
     max-width: 1158px;
     padding: 0 15px;
+  }
+
+  .logo {
+    margin-right: 76px;
+  }
+
+  .nav-list {
+    gap: 40px;
+  }
+
+  .contacts-list {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .contacts-item {
+    padding: 24px 0;
+    position: relative;
+  }
+
+  .contacts-link {
+    font-weight: 400;
+    font-size: 16px;
   }
 
   .hero {
